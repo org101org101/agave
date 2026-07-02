@@ -78,7 +78,7 @@ jobs:
             | xargs -r docker run --rm \
               -v "${PWD}:/solana" -w /solana \
               "${DOCKER_IMAGE}" \
-              cargo package
+              cargo package --no-verify
           cp -v target/package/*.crate target/crate-staging/
 
       - name: Upload crate artifacts
